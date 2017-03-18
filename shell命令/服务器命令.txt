@@ -1,0 +1,103 @@
+
+
+
+������admin  zhgadmin123 
+����ͷ��yj yj123456
+114.215.222.190    root    test@aliyun!@#$%2016
+
+����118
+cd opensource/
+./deploy-consult.sh //������Ѷ
+
+��־����
+
+docker logs -f --tail 10 #����ID/Name
+
+docker cp test.news:/usr/local/openresty/ /test
+
+docker stop test.news
+
+docker rm test.news
+
+docker run -v /test/openresty/:/usr/local/openresty/ --name test.news -it --rm  -p 3000:3000 139.129.108.243:5000/test/news:1.1.9
+
+
+docker cp test.weixin:/usr/local/openresty/ /test
+
+docker stop test.weixin
+
+docker rm test.weixin
+
+docker run -v /test/openresty/:/usr/local/openresty/ --name test.weixin -it --rm  -p 5000:5000 139.129.108.243:5000/test/weixin:1.0.6
+
+~/proxy-test.sh
+
+docker�鿴ip   docker exec test.news ifconfig
+
+
+drop database if exists lewo
+create database if not exists lewo default character set utf8 collate utf8_general_ci;
+
+use lewo
+source /mnt/deploy/lewo.sql
+
+
+
+�鿴����
+df -h
+
+�鿴����
+
+ps -ef | grep py
+
+dockerɾ������ȣ�
+1.����rootȨ��
+
+sudo su
+
+2.ֹͣ���е�container���������ܹ�ɾ�����е�images��
+
+docker stop $(docker ps -a -q)
+
+�����Ҫɾ������container�Ļ��ټ�һ��ָ�
+
+docker rm $(docker ps -a -q)
+
+3.�鿴��ǰ��Щʲôimages
+
+docker images
+
+4.ɾ��images��ͨ��image��id��ָ��ɾ��˭
+
+docker rmi <image id>
+
+��Ҫɾ��untagged images��Ҳ������ЩidΪ<None>��image�Ļ�������
+
+docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
+
+Ҫɾ��ȫ��image�Ļ�
+-q �����г����������id
+
+docker rmi $(docker images -q)  
+
+
+
+
+
+
+git branch ���鿴���б��ط�֧��
+git branch -a(�鿴���з�֧)
+git branch -d ��ɾ�����ط�֧��
+git branch -d -r��ɾ��Զ�̷�֧��
+git branch -r(�鿴����Զ�̷�֧)
+git tag (�鿴��ǰ��֧�����б�ǩ)
+git tag -d (ɾ��tag)
+
+
+
+
+
+
+
+
+ 

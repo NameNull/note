@@ -1,0 +1,49 @@
+
+https://github.com/362228416/tomcat
+https://github.com/362228416/tomcat/blob/master/Dockerfile
+curl https://raw.githubusercontent.com/362228416/openresty-web-dev/master/install/install-block-browser.sh | sh -
+
+
+��װ����
+
+tar -czf tomcat.tar.gz tomcat
+
+
+ssh��½��ssh  -o StrictHostKeyChecking=no 121.196.202.72
+ssh�˳���exit
+
+scp tomcat.tar.gz root@121.196.202.72:/usr/local/
+
+tar -xzvf tomcat.tar.gz
+
+���أ�wget ���� 
+��֤��md5sum �ļ���  
+  
+
+apt-get install mysql-server-5.6
+mysql root Rwb16882017
+
+service mysql start
+
+mysql -h121.196.202.72 -uroot -p
+show variables like 'character_set_%';
+
+set character_set_client=utf8;
+set character_set_server=utf8;
+set character_set_connection=utf8;
+set character_set_database=utf8;
+set character_set_results=utf8;
+set character_set_system=utf8;
+set character_set_filesystem=utf8;
+
+service mysql restart
+
+����Զ�̷���Ȩ��
+use mysql; 
+update user set host = '%' where user = 'root'; 
+select host, user from user; 
+FLUSH PRIVILEGES;
+
+vim /etc/mysql/my.cnf 
+ע��127.0.0.1
+

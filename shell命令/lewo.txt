@@ -1,0 +1,37 @@
+client="front"
+project="lewo"
+
+cd /mnt/build/$project
+git fetch
+hash=$(git rev-list --tags --max-count=1)
+version=$(git describe --tags $hash)
+echo $version
+git checkout $version .
+
+export JAVA_HOME=/usr/local/jdk/
+gradle=/usr/local/gradle-3.2.1/bin/gradle
+$gradle clean
+$gradle build -x test -Denv=test
+
+image="test/$project/$client"
+echo $image
+cp $client/build/libs/$client.war $client/docker/ROOT.war
+
+cd $client/docker
+
+new_container=test.$project.$client
+container=$(docker ps | grep $new_container | awk '{print $1}')
+if [ "$container"x != ""x ]
+then
+ docker stop $container
+fi
+
+container=$(docker ps -a | grep $new_container | awk '{print $1}')
+if [ "$container"x != ""x ]
+then
+   docker rm $container
+fi
+
+sudo docker build -t $image .
+
+docker run -d --name $new_container -p 7000:8080 -e JAVA_OPTS='-client -Duser.timezone=Asia/Shanghai' $image
