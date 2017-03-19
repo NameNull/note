@@ -1,24 +1,29 @@
+116.217.224.192 123.197.204.74
+
+test@aliyun!@#$%2016 Rwb!1688
+
+testdbadmin@123123 Rwb16882017
 
 https://github.com/362228416/tomcat
 https://github.com/362228416/tomcat/blob/master/Dockerfile
 curl https://raw.githubusercontent.com/362228416/openresty-web-dev/master/install/install-block-browser.sh | sh -
 
-
-��װ����
+安装环境
 
 tar -czf tomcat.tar.gz tomcat
 
 
-ssh��½��ssh  -o StrictHostKeyChecking=no 121.196.202.72
-ssh�˳���exit
+ssh登陆：ssh  -o StrictHostKeyChecking=no 123.197.204.74
 
-scp tomcat.tar.gz root@121.196.202.72:/usr/local/
+ssh退出：exit
+
+scp tomcat.tar.gz root@123.197.204.74:/usr/local/
 
 tar -xzvf tomcat.tar.gz
 
-���أ�wget ���� 
-��֤��md5sum �ļ���  
-  
+下载：wget 链接
+验证：md5sum 文件名
+
 
 apt-get install mysql-server-5.6
 mysql root Rwb16882017
@@ -38,12 +43,17 @@ set character_set_filesystem=utf8;
 
 service mysql restart
 
-����Զ�̷���Ȩ��
-use mysql; 
-update user set host = '%' where user = 'root'; 
-select host, user from user; 
+更改远程访问权限
+use mysql;
+update user set host = '%' where user = 'root';
+select host, user from user;
 FLUSH PRIVILEGES;
 
-vim /etc/mysql/my.cnf 
-ע��127.0.0.1
+vim /etc/mysql/my.cnf
+注释127.0.0.1
 
+drop database if exists lewo
+create database if not exists lewo default character set utf8 collate utf8_general_ci;
+
+use lewo
+source /mnt/deploy/lewo.sql

@@ -1,0 +1,51 @@
+日志命令
+
+docker logs -f --tail 10 #容器ID/Name
+
+docker cp test.news:/usr/local/openresty/ /test
+
+docker stop test.news
+
+docker rm test.news
+
+docker run -v /test/openresty/:/usr/local/openresty/ --name test.news -it --rm  -p 3000:3000 139.129.108.243:5000/test/news:1.1.9
+
+docker查看ip   docker exec test.news ifconfig
+
+
+查看磁盘
+df -h
+
+查看进程
+
+ps -ef | grep py
+
+docker删除镜像等：
+1.进入root权限
+
+sudo su
+
+2.停止所有的container，这样才能够删除其中的images：
+
+docker stop $(docker ps -a -q)
+
+如果想要删除所有container的话再加一个指令：
+
+docker rm $(docker ps -a -q)
+
+3.查看当前有些什么images
+
+docker images
+
+4.删除images，通过image的id来指定删除谁
+
+docker rmi <image id>
+
+想要删除untagged images，也就是那些id为<None>的image的话可以用
+
+docker rmi $(docker images -a| grep "^<none>" | awk "{print $3}")
+
+要删除全部image的话
+-q 仅仅列出镜像或容器id
+
+docker rmi $(docker images -q)
