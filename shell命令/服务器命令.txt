@@ -3,7 +3,6 @@
 
 ������admin  zhgadmin123 
 ����ͷ��yj yj123456
-114.215.222.190    root    test@aliyun!@#$%2016
 
 ����118
 cd opensource/
@@ -92,12 +91,3 @@ git branch -d -r��ɾ��Զ�̷�֧��
 git branch -r(�鿴����Զ�̷�֧)
 git tag (�鿴��ǰ��֧�����б�ǩ)
 git tag -d (ɾ��tag)
-
-
-
-
-
-
-
-
- 
