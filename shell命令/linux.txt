@@ -1,8 +1,4 @@
-116.217.224.192 123.197.204.74
-
-test@aliyun!@#$%2016 Rwb!1688
-
-testdbadmin@123123 Rwb16882017
++2
 
 https://github.com/362228416/tomcat
 https://github.com/362228416/tomcat/blob/master/Dockerfile
