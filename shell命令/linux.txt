@@ -9,11 +9,11 @@ curl https://raw.githubusercontent.com/362228416/openresty-web-dev/master/instal
 tar -czf tomcat.tar.gz tomcat
 
 
-ssh登陆：ssh  -o StrictHostKeyChecking=no 123.197.204.74
+ssh登陆：ssh  -o StrictHostKeyChecking=no 123.198.204.74
 
 ssh退出：exit
 
-scp tomcat.tar.gz root@123.197.204.74:/usr/local/
+scp tomcat.tar.gz root@123.198.204.74:/usr/local/
 
 tar -xzvf tomcat.tar.gz
 
@@ -26,7 +26,7 @@ mysql root Rwb16882017
 
 service mysql start
 
-mysql -h121.196.202.72 -uroot -p
+mysql -h123.198.204.74 -uroot -p
 show variables like 'character_set_%';
 
 set character_set_client=utf8;
