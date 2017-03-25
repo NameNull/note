@@ -9,7 +9,7 @@ curl https://raw.githubusercontent.com/362228416/openresty-web-dev/master/instal
 tar -czf tomcat.tar.gz tomcat
 
 
-ssh登陆：ssh  -o StrictHostKeyChecking=no 123.198.204.74
+ssh登陆：ssh  -o StrictHostKeyChecking=no 123.198.204.74  xw5kpjfh@db
 
 ssh退出：exit
 
@@ -48,8 +48,11 @@ FLUSH PRIVILEGES;
 vim /etc/mysql/my.cnf
 注释127.0.0.1
 
-drop database if exists lewo
+drop database if exists lewo;
 create database if not exists lewo default character set utf8 collate utf8_general_ci;
 
-use lewo
+use lewo;
 source /mnt/deploy/lewo.sql
+
+
+软连接  ln -s 源文件 目标文件
