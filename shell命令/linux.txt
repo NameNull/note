@@ -52,7 +52,13 @@ drop database if exists lewo;
 create database if not exists lewo default character set utf8 collate utf8_general_ci;
 
 use lewo;
-source /mnt/deploy/lewo.sql
-
+source /mnt/deploy/lewo.sql;
 
 软连接  ln -s 源文件 目标文件
+
+后台运行
+nohup ./task.sh >output 2>&1 &
+>output   ： 当前目录output下 记录标准输出日志【stdout】
+2>&1      ： 标准错误日志【stderr】输出到标准输出日志【stdout】
+最后一个 &： 就是关闭终端也运行
+nohup ./task.sh >/dev/null 2>&1 &  不输出日志
