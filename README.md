@@ -21,8 +21,8 @@
 >>>二叉树
 >>>>平衡二叉树
 >>>>>满二叉树
-<br />
 ![](https://github.com/NameNull/note/blob/master/images/demo.jpeg "悬浮文字")
+<br />
 [![baidu]](http://baidu.com)[baidu]:http://www.baidu.com/img/bdlogo.gif "百度Logo"
 ```javascript
 console.log(1);
