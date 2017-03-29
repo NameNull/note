@@ -24,5 +24,6 @@
 ![](https://github.com/NameNull/note/blob/master/images/demo.jpeg "悬浮文字")
 ```javascript
 console.log(1);
+```
 [![baidu]](http://baidu.com)[baidu]:http://www.baidu.com/img/bdlogo.gif "百度Logo"
 
