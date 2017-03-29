@@ -14,7 +14,7 @@
 `高亮`
 <br />
 
-[文字超链接](http://www.baidu.com "悬停文字"）
+[文字超链接](http://www.baidu.com）
 [li](http://www.baidu.com)
 * 圆点符号
     * 二级圆点
