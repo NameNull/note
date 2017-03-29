@@ -8,24 +8,23 @@
 #### 四级标题
 ##### 五级标题
 ###### 六级标题
-####### 七级标题
 普通文本
 换行<br />
 转义 \<br />
-        单行文本
-    这个呢
-        这个呢
 `高亮`
-[文字超链接]（http://www.baidu.com "悬停文字"）
-*圆点符号
+<br />
+[文字超链接](http://www.baidu.com "悬停文字"）
+* 圆点符号
     * 二级圆点
         *三级圆点
         *三级圆点
+        <br />
 >数据结构
 >>树
 >>>二叉树
 >>>>平衡二叉树
 >>>>>满二叉树
+<br />
 ![](http://www.baidu.com/img/bdlogo.gif "百度logo")
 [![baidu]](http://baidu.com)
 [baidu]:http://www.baidu.com/img/bdlogo.gif "百度Logo"
