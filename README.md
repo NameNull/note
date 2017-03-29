@@ -20,7 +20,7 @@
 >>树
 >>>二叉树
 >>>>平衡二叉树
->>>>>满二叉树
+>>>>>满二叉树<br />
 ![](https://github.com/NameNull/note/blob/master/images/demo.jpeg "悬浮文字")
 ```javascript
 console.log(1);
