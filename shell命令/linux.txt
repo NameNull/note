@@ -62,3 +62,7 @@ nohup ./task.sh >output 2>&1 &
 2>&1      ： 标准错误日志【stderr】输出到标准输出日志【stdout】
 最后一个 &： 就是关闭终端也运行
 nohup ./task.sh >/dev/null 2>&1 &  不输出日志
+
+df -lh
+
+su
