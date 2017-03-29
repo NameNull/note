@@ -25,5 +25,5 @@
 ```javascript
 console.log(1);
 ```
-[![baidu]](http://www.baidu.com)[baidu]:http://www.baidu.com/img/bdlogo.gif "百度Logo"
+[![](http://www.baidu.com/img/bdlogo.gif "可以点击")](http://www.baidu.com)
 
