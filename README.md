@@ -16,7 +16,6 @@
 [文字超链接](http://www.baidu.com "悬停文字"）
 *圆点符号
     * 二级圆点
-    * 二级圆点
         *三级圆点
 >数据结构
 >>树
@@ -24,7 +23,7 @@
 >>>>平衡二叉树
 >>>>>满二叉树
 <br />
-![](https://github.com/NameNull/note/blob/master/images/demo.jpeg "头像")
+![](https://github.com/NameNull/note/blob/master/images/demo.jpeg)
 [![baidu]](http://baidu.com)[baidu]:http://www.baidu.com/img/bdlogo.gif "百度Logo"
 ```javascript
 console.log(1);
