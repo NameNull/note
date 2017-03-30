@@ -1,0 +1,7 @@
+1.二进制：
+npm install asar
+压缩 asar p . app.asar
+解压 asar e app.asar ./app
+2.打包electron
+npm install electron-packager
+electron-packager . --electron-version=1.4.15 --overwrite --asar --ignore="(execute|pack).bat" --icon=./build/images/favicon.ico
