@@ -5,3 +5,59 @@ npm install asar
 2.打包electron
 npm install electron-packager
 electron-packager . --electron-version=1.4.15 --overwrite --asar --ignore="(execute|pack).bat" --icon=./build/images/favicon.ico
+
+path
+ path.resolve("a") == path.join(__dirname,"a")
+ 绝对路径                         相对路径
+
+
+require:
+     module.exports = {
+       a : function() {},
+       b : 'xxx'
+     };
+
+     var m = require('./a');
+     m.a();
+     var {b} = require("./a")
+     b();
+import:
+     export {fun as default,a,b,c}                            export default a == export {a as default}
+     import {default as f,b,c} from "./a"                       import a from "./a" == import {default as a} from './a';
+
+es2015 = es6
+     var a = (i) => {return i++;} === var a = (i) => i++;
+
+
+DODE:
+    require CommonJs规范 同步加载 适用于服务器端，存在本地
+    require.ensure(['./b'], function(require){等效于空数组+require.include("./b")  注意：webpack特有 不是commonjs规范
+        require('./c');//懒加载懒执行
+        require ("./b");//预加载懒执行
+        console.log('done!');
+    },"list"); // chunkFilename:'[name].chunk.js'  -- list.chunk.js   可以将id不同的模块用[name]分组
+
+AMD,CMD:
+    define 代表requireJS seaJs 适用于浏览器加载服务器端模块（远程加载）,AMD依赖前置，CMD依赖就近
+    //AMD
+    define(['./a','./b'], function (a, b) {
+
+        //依赖一开始就写好
+        a.test();
+        b.test();
+    });
+
+    //CMD 好处：1、require b 可能不需要加载，经济开销；2.就近便于多代码的管理，就近书写，而不用去改前置参数
+    define(function (requie, exports, module) {
+
+        //依赖可以就近书写
+        var a = require('./a');
+        a.test();
+
+        ...
+        //软依赖
+        if (status) {
+            var b = requie('./b');
+            b.test();
+        }
+    });

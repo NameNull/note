@@ -1,0 +1,12 @@
+#生成package.json
+npm init -y
+#设置package.json  author字段  设置永久生效
+npm config set init.author.name yujie
+npm config set init.author.email 945351749@qq.com
+
+--save-dev
+--save
+
+
+[hash] 所有输出文件使用同一个hash,一个文件改变整体替换hash  一般用于版本迭代文件夹名  [hash]/aa.js
+[chunkhash] 每个文件根据内容生成hash，每个文件改变该文件替换hash  一般用于文件名  aa.[chunkhash].js
