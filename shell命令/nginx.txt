@@ -9,9 +9,9 @@ file=$name.tar.gz
 prefix=/usr/local/openresty
 #echo $file
 wget https://openresty.org/download/$file
-tar zxvf $file
+tar -zxvf $file
 cd $name
 ./configure
 make -j2
 make install
-ln -s $prefix/nginx/sbin/nginx /usr/local/sbin/openresty
+#ln -s $prefix/nginx/sbin/nginx /usr/local/sbin/openresty
