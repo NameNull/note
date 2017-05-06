@@ -63,6 +63,9 @@ nohup ./task.sh >output 2>&1 &
 最后一个 &： 就是关闭终端也运行
 nohup ./task.sh >/dev/null 2>&1 &  不输出日志
 
-df -lh
+df -h
 
-su
+查看防火墙是否被激活 ufw status
+激活防火墙 ufw enable
+
+查看负载情况  w
