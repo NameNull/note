@@ -92,3 +92,9 @@ service ssh restart
 激活防火墙 ufw enable
 
 查看负载情况  w
+
+
+只能在mac linux系统下
+open .
+ws .
+zsh

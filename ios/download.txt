@@ -1,0 +1,2 @@
+xcode-select --install
+xcode-select -p 如果不在/Application下在/Library下则到苹果应用商店下载安装
