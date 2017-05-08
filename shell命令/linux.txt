@@ -86,3 +86,9 @@ vim authorized_keys
 chmod 600 authorized_keys
 
 service ssh restart
+
+
+查看防火墙是否被激活 ufw status
+激活防火墙 ufw enable
+
+查看负载情况  w
