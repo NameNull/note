@@ -63,6 +63,26 @@ nohup ./task >output 2>&1 &
 最后一个 &： 就是关闭终端也运行
 nohup ./task >/dev/null 2>&1 &  不输出日志
 
-df -lh
+df -h  硬盘使用情况
 
-su
+fdisk -l 查看挂载盘
+
+ctrl+d 退出服务器
+
+创建用户 adduser yj
+赋予权限 gpasswd -a yj sudo
+visudo  增加 yj   ALL=(ALL:ALL) ALL  让yj拥有root权限
+
+pwd 当前目录
+
+生成秘钥 ssh-keygen -t rsa -b 4096 -C "945351749@qq.com"
+运行代理 eval "$(ssh-agent -s)"
+加入代理 ssh-add ~/.ssh/id_rsa
+
+cd .ssh
+vim authorized_keys
+放入本地公钥
+
+chmod 600 authorized_keys
+
+service ssh restart
