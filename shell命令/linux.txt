@@ -98,3 +98,6 @@ service ssh restart
 open .
 ws .
 zsh
+
+
+tracepath www.zhgtrade.com
