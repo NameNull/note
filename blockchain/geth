@@ -12,6 +12,9 @@ npm install
 npm install -g forever
 
 geth attach
+personal.newAccount
+eth.syncing
+eth.blockNumber
 
 curl http://localhost:8545
 cd eth-wallet/
