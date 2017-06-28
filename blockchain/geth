@@ -1,0 +1,46 @@
+wget https://nodejs.org/dist/v6.11.0/node-v6.11.0-linux-x64.tar.xz -P .
+tar -xvf node-v6.11.0-linux-x64.tar.xz
+mv node-v6.11.0-linux-x64 node
+vim ~/.bash_profile
+    export NODE=/opt/node
+    export PATH=$PATH:$NODE/bin
+source ~/.bash_profile
+node -v
+cd eth-wallet/
+apt-get install git
+npm install
+npm install -g forever
+
+geth attach
+
+curl http://localhost:8545
+cd eth-wallet/
+node test.js
+vim start.sh
+vim stop.sh
+chmod +x start.sh
+chmod +x stop.sh
+./start.sh
+./stop.sh
+ps -ef | grep wallet
+./start.sh
+ps -ef | grep wallet
+node eth-wallet.js
+ls
+mkdir logs
+./start.sh
+./stop.sh
+./start.sh
+ps -ef | grep wal
+tail -100f logs/logs.log
+tail -100f logs/console.log
+./stop.sh
+cat CURRENT
+
+
+#!/bin/bash
+forever start -a -l forever3.log -o logs/console.log -e logs/err.log eth-wallet.js
+
+#!/bin/bash
+forever stop -a -l forever3.log -o logs/console.log -e logs/err.log eth-wallet.js
+
