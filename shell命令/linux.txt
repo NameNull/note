@@ -70,6 +70,7 @@ fdisk -l 查看挂载盘
 ctrl+d 退出服务器
 
 创建用户 adduser yj
+删除用户 userdel -r yj
 赋予权限 gpasswd -a yj sudo
 visudo  增加 yj   ALL=(ALL:ALL) ALL  让yj拥有root权限
 
