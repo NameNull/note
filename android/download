@@ -1,0 +1,22 @@
+下载android sdk tools
+23版本以下：cd tools && ./android  呼出sdkmanager面板
+25版本以上 cd tools/bin && sdkmanager [args]进行控制 --list --update等
+安装如：sdkmanager emulator
+
+安装包包含：Android SDK
+      Android SDK Platform
+      Performance (Intel ® HAXM)
+      Android Virtual Device
+
+同意证书：sdkmanager --licenses 一路accept
+
+新建虚拟机：（对应tv, wear ,apis）
+android create avd -n GalaxyS5 -f -k 'XXXXX' -d 可用设备id ...
+删除虚拟机
+android delete --avd -n GalaxyS5
+查看虚拟机
+sdkmanager list -avd
+查看可用设备
+sdkmanager list
+运行虚拟机:
+cd tools && emulator  GalaxyS5 // bug : 配置环境变量tools后执行emulator会报错，只有进入tools目录执行才可以。

@@ -61,3 +61,6 @@ AMD,CMD:
             b.test();
         }
     });
+
+    npm config set prefix "D:\Program Files\nodejs\node_global"
+    npm config set cache "D:\Program Files\nodejs\node_cache"
