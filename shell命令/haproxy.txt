@@ -9,7 +9,7 @@ autossh -N -f -R 10081:0.0.0.0:10080 root@dev_test
 
 apt-get install haproxy
 
-vim /ect/haproxy/haproxy.cfg
+vim /etc/haproxy/haproxy.cfg
 
 末行添加
 listen mysql_proxy
