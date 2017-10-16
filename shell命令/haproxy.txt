@@ -1,0 +1,28 @@
+开放端口映射
+#!/bin/bash
+#ssh -N -f -R 10081:0.0.0.0:10080 root@dev_test
+autossh -N -f -R 10081:0.0.0.0:10080 root@dev_test
+
+
+
+数据库跳板：
+
+apt-get install haproxy
+
+vim /etc/haproxy/haproxy.cfg
+
+末行添加
+listen mysql_proxy
+    mode        tcp
+    bind 0.0.0.0:3306
+    server mdb1 rm-j6c6949y097153751.mysql.rds.aliyuncs.com:3306
+
+vim /etc/default/haproxy
+    ENABLED=1
+
+service haproxy start
+service haproxy stop
+
+服务器开放3306端口
+
+
