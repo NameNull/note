@@ -15,3 +15,4 @@ cd $name
 make -j2
 make install
 #ln -s $prefix/nginx/sbin/nginx /usr/local/sbin/openresty
+Lbq.17371667166
