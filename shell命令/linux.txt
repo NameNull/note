@@ -9,7 +9,7 @@ curl https://raw.githubusercontent.com/362228416/openresty-web-dev/master/instal
 tar -czf tomcat.tar.gz tomcat
 
 
-ssh登陆：ssh  -o StrictHostKeyChecking=no 123.198.204.74  xw5kpjfh@db
+ssh登陆：ssh  root@123.198.204.74
 
 ssh退出：exit
 
@@ -48,8 +48,8 @@ FLUSH PRIVILEGES;
 vim /etc/mysql/my.cnf
 注释127.0.0.1
 
-drop database if exists lewo;
-create database if not exists lewo default character set utf8 collate utf8_general_ci;
+drop database if exists zc;
+create database if not exists zc default character set utf8 collate utf8_general_ci;
 
 use lewo;
 source /mnt/deploy/lewo.sql;
@@ -75,18 +75,6 @@ ctrl+d 退出服务器
 visudo  增加 yj   ALL=(ALL:ALL) ALL  让yj拥有root权限
 
 pwd 当前目录
-
-生成秘钥 ssh-keygen -t rsa -b 4096 -C "945351749@qq.com"
-运行代理 eval "$(ssh-agent -s)"
-加入代理 ssh-add ~/.ssh/id_rsa
-
-cd .ssh
-vim authorized_keys
-放入本地公钥
-
-chmod 600 authorized_keys
-
-service ssh restart
 
 
 查看防火墙是否被激活 ufw status

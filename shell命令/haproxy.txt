@@ -1,7 +1,3 @@
-开放端口映射
-#!/bin/bash
-#ssh -N -f -R 10081:0.0.0.0:10080 root@dev_test
-autossh -N -f -R 10081:0.0.0.0:10080 root@dev_test
 
 
 
