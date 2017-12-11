@@ -63,3 +63,6 @@ mysqldump -u wcnc -p -d --add-drop-table smgp_apps_wcnc >d:wcnc_db.sql
 mysql>use 数据库
 然后使用source命令,后面参数为脚本文件(如这里用到的.sql)
 mysql>source d:wcnc_db.sql
+
+导出阿里云数据库
+mysqldump --triggers --routines --events -u123 -p123 -h123 --set-gtid-purged=OFF zcfunding > bak/$dbfile
