@@ -1,7 +1,7 @@
 #!/bin/bash
 apt-get update
 apt-get install -y libpcre3 libpcre3-dev
-apt-get install -y openssl libssl-dev
+apt-get install -y openssl libssl-dev make
 cd /tmp
 version="1.11.2.2"
 name=openresty-$version
