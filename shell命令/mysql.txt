@@ -65,4 +65,44 @@ mysql>use 数据库
 mysql>source d:wcnc_db.sql
 
 导出阿里云数据库
+#/bin/sh
+export dbfile=$(date +%m%d-%H%M)".sql"
 mysqldump --triggers --routines --events -u123 -p123 -h123 --set-gtid-purged=OFF zcfunding > bak/$dbfile
+
+
+
+阿里云服务器ubuntu修改mysql数据目录
+
+/mydata/data/mysql
+
+sudo cp -R /var/lib/mysql/* /mydata/data/mysql
+
+sudo chown -R mysql:mysql /mydata/data/mysql
+
+sudo service mysql stop
+
+sudo vim /etc/mysql/my.cnf
+
+把datadir=/var/lib/mysql 改为： datadir=/mydata/data/mysql
+
+vim /etc/apparmor.d/usr.sbin.mysqld
+
+把 /var/lib/mysql/ r 改为 /mydata/data/mysql/ r
+把 /var/lib/mysql/** rwk 改为 /mydata/data/mysql/** rwk
+
+
+
+下面似乎没有
+修改启动文件/etc/init.d/mysql
+同样把两处的datadir=/var/lib/mysql 改为 datadir=/mydata/data/mysql
+
+
+sudo /etc/init.d/apparmor restart
+sudo /etc/init.d/mysql restart
+
+mysql -uroot -p
+
+mysql>show variables like '%dir%';
+
+显示datadir 为/mydata/data/mysql。
+说明修改成功。

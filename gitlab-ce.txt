@@ -1,0 +1,13 @@
+curl https://packages.gitlab.com/gpg.key 2> /dev/null | sudo apt-key add - &>/dev/null
+deb https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/ubuntu trusty main
+sudo apt-get update
+sudo pt-get install gitlab-ce=10.6.1-ce.0
+
+
+
+crontab -e
+15 04 * * 2-6  umask 0077; tar cfz /secret/gitlab/backups/$(date "+etc-gitlab-\%s.tgz") -C / etc/gitlab
+0 2 * * * /opt/gitlab/bin/gitlab-rake gitlab:backup:create CRON=1
+
+gitlab_rails['backup_path'] = '/mnt/backups'
+gitlab_rails['backup_keep_time'] = 604800
