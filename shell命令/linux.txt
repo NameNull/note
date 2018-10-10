@@ -27,15 +27,18 @@ mysql root Rwb16882017
 service mysql start
 
 mysql -h123.198.204.74 -uroot -p
-show variables like 'character_set_%';
 
-set character_set_client=utf8;
-set character_set_server=utf8;
-set character_set_connection=utf8;
-set character_set_database=utf8;
-set character_set_results=utf8;
-set character_set_system=utf8;
-set character_set_filesystem=utf8;
+SHOW VARIABLES WHERE Variable_name LIKE 'character_set_%' OR Variable_name LIKE 'collation%';
+
+set character_set_client=utf8mb4;
+set character_set_connection=utf8mb4;
+set character_set_database=utf8mb4;
+set character_set_filesystem=utf8mb4;
+set character_set_results=utf8mb4;
+set character_set_server=utf8mb4;
+set collation_connection=utf8mb4_unicode_ci;
+set collation_database=utf8mb4_unicode_ci;
+set collation_server=utf8mb4_unicode_ci;
 
 service mysql restart
 
@@ -47,6 +50,19 @@ FLUSH PRIVILEGES;
 
 vim /etc/mysql/my.cnf
 注释127.0.0.1
+
+1.在mysql的安装目录下找到my.cnf,作如下修改：
+
+[mysqld]
+
+character-set-server=utf8mb4
+
+[mysql]
+
+default-character-set=utf8mb4
+
+修改后重启Mysql
+
 
 drop database if exists zc;
 create database if not exists zc default character set utf8 collate utf8_general_ci;
