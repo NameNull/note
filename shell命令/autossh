@@ -1,20 +1,16 @@
 A:
-autossh -fCNR 10090:localhost:80 root@dev_test
+autossh -M 10093 -fCNR 10090:localhost:80 root@dev_test
 114.215.222.190 dev_test
 
 B:
 server{
-    listen	10083;
-    server_name localhost;
-    location / {
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header Host $http_host;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            client_max_body_size 100m;
-            client_body_buffer_size 128k;
-            proxy_pass http://127.0.0.1:10090;
-    }
-}
+        listen	10083;
+        default_type text/html;
+        server_name localhost;
+        location / {
+                proxy_pass http://127.0.0.1:10090;
+        }
+  }
 
 C:
 git remote -v
