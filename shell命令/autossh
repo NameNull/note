@@ -1,10 +1,10 @@
 A:
-autossh -NRf 10081:0.0.0.0:10080 root@dev_test
+autossh -fCNR 10090:localhost:80 root@dev_test
 114.215.222.190 dev_test
 
 B:
 server{
-    listen	10080;
+    listen	10083;
     server_name localhost;
     location / {
             proxy_set_header X-Real-IP $remote_addr;
@@ -12,7 +12,7 @@ server{
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             client_max_body_size 100m;
             client_body_buffer_size 128k;
-            proxy_pass http://127.0.0.1:10081;
+            proxy_pass http://127.0.0.1:10090;
     }
 }
 
@@ -42,9 +42,3 @@ ssh-copy-id user1@123.123.123.123
 流程 在本机生成公钥 将其放置进目标机  本机就能访问目标机器了
 
 另 know_hosts 是本机访问目标机后  写入目标机信息的
-
-
-
-qwertyuioplkjhgfdsa!#
-qwertyuioplkjhgfdsa!#
-tzweth2017
