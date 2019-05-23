@@ -1,5 +1,5 @@
 A:
-autossh -M 10093 -fCNR 10090:localhost:80 root@dev_test
+autossh -M 10095 -CNR  10090:127.0.0.1:80 root@dev_test -f AUTOSSH_POLL 86400 -o TCPKeepAlive=yes -o ServerAliveInterval=30
 114.215.222.190 dev_test
 
 B:
