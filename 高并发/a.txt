@@ -1,0 +1,29 @@
+xshell命令
+    jps： 查看当前的java进程
+    netstat -an | grep ESTABLISHED | wc -l: 查看正在建立链接的线程数
+
+tomcat调优（4核8G）
+    server.tomcat.max-threads: 800 (默认200)
+    server.tomcat.accept-count: 1000 (默认100)
+    server.tomcat.max-connections: 20000 (默认10000)
+    server.tomcat.min-spare-threads: 100 (默认10)
+
+keepalive调优
+    tomcat keepalive
+    nginx keepalive
+    客户端请求头 Connection: keep-alive ， 返回头 Connection: keep-alive， 也就是说服务端和客户端都支持keep-alive
+
+undertow调优
+
+缓存调优
+
+iostat jstack
+
+jvm调优
+JDK1.8默认 ps + po
+pn + cms
+gceasy,io
+nohup java -Xmx3550m -Xms3550m -Xmn2g -Xss 256k -XX:+PrintGCDetails
+-XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -XX:+PrintHeapAtGC -Xloggc:gc.log
+-XX:+UseParNewGC -XX:+UseConcMarkSweepGC
+-XX:MetaspaceSize=256m -jar
